@@ -6,13 +6,13 @@
     <title>وُدِّي · Wuddi</title>
     <script>
       (function () {
-        // Short share links: /p/{token} → /p/?t={token}
+        // Short share links: /p/{token} → branded Surge host
         var path = location.pathname || "";
         var parts = path.split("/").filter(Boolean);
         var i = parts.indexOf("p");
         if (i >= 0 && parts[i + 1] && parts[i + 1] !== "index.html") {
           var token = parts[i + 1];
-          location.replace("/p/?t=" + encodeURIComponent(token));
+          location.replace("https://wuddi.surge.sh/p/" + encodeURIComponent(token));
           return;
         }
       })();
